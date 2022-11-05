@@ -1,0 +1,70 @@
+<wxs module="util" src="../util.wxs" />
+
+<view class="container white" wx:if="{{allRemarks.length === 0}}">
+  <image class="background" src="Images/None.png" mode="aspectFit" />
+  <view class="title">暂无代办</view>
+  <view class="subtitle">好像什么代办也没有...</view>
+</view>
+
+<swiper wx:if="{{allRemarks.length > 0}}" indicator-dots="true" autoplay="true" interval="2000" duration="500" 
+style="height: 200px; width: 100%; background: white; ">
+      <swiper-item><image src="Images/RemarkCover01.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
+      <swiper-item><image src="Images/RemarkCover02.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
+      <swiper-item><image src="Images/RemarkCover03.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
+</swiper>
+
+<view class="container" wx:if="{{allRemarks.length > 0}}">
+  <view class="form-group"><view class="search-bar">
+    <icon class="search-icon" type="search" size="24"></icon>
+    <input class="search-input" placeholder="搜索代办" bindinput="onSearch" value="{{search}}" />
+  </view></view>
+  <view class="form-group_label">目前代办仅支持7点到24点消息提示</view>
+  <view class="form-group_label">待办<mp-badge content="{{unfinishedRemarks.length}}" style="margin-left: 5px;" /></view>
+  <view class="form-group" wx:if="{{unfinishedRemarks.length > 0}}" 
+  style="z-index: 0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+    <view class="form-cell" wx:for="{{unfinishedRemarks}}" wx:key="index">
+      <mp-slideview buttons="{{slideButtons}}" data-index='{{index}}' icon="{{true}}" bindbuttontap="slideButtonTapUpper">
+        <view class="slide" data-index="{{index}}" bindtap="toDetailPageUpper">
+          <view class="mission-info">
+            <view class="mission-info_title">{{util.filterStr(item.title, 10)}}</view>
+            <view class="mission-info_date">📅 {{util.cutStr(item.date, 10)}} 创建</view>
+          </view>
+          <view class="mission-info_author">
+            <image style="position: absolute; width: 100%; bottom: 0;" wx:if="{{item._openid === _openidA}}" mode="widthFix" src="Images/MissionA.png"/>
+            <image style="position: absolute; width: 100%; bottom: 0;" wx:if="{{item._openid === _openidB}}" mode="widthFix" src="Images/MissionB.png"/>
+          </view>
+          <image wx:if="{{item.star}}" class="star" src="Images/Star.png" />
+        </view>
+      </mp-slideview>
+    </view>
+  </view>
+
+  <view class="form-group_label">已完成<mp-badge content="{{finishedRemarks.length}}" style="margin-left: 5px;" /></view>
+  <view class="form-group" wx:if="{{finishedRemarks.length > 0}}" 
+  style="z-index: 0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+    <view class="form-cell" wx:for="{{finishedRemarks}}" wx:key="index">
+      <mp-slideview buttons="{{slideButtons}}" data-index='{{index}}' icon="{{true}}" bindbuttontap="slideButtonTapLower">
+        <view class="slide" data-index="{{index}}" bindtap="toDetailPageLower">
+          <view class="mission-info">
+            <view class="mission-info_title">{{util.filterStr(item.title, 10)}}</view>
+            <view class="mission-info_date">📅 {{util.cutStr(item.date, 10)}} 开始</view>
+          </view>
+          <view class="mission-info_author">
+              <image style="position: absolute; width:100%; bottom: 0;" wx:if="{{item._openid === _openidA}}" mode="widthFix" src="Images/MissionA.png"/>
+              <image style="position: absolute; width:100%; bottom: 0;" wx:if="{{item._openid === _openidB}}" mode="widthFix" src="Images/MissionB.png"/>
+          </view>
+          <image wx:if="{{item.star}}" class="star" src="Images/Star.png" />
+        </view>
+      </mp-slideview>
+    </view>
+  </view>
+</view>
+
+<movable-area style="pointer-events: none; position: fixed; width: 100%; height: 100%;">
+  <movable-view style="pointer-events: auto; width: 20%; height: 20%;" x="{{screenWidth}}" y="{{screenHeight}}" direction="all">
+    <button class="btn-normal" hover-class="btn-hover" size="mini" bindtap="toAddPage" 
+    style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <image style = "margin-top: 10px; height: 100%; width: 100%;" mode="widthFix" src="Images/Plus.png"/>代办
+    </button>
+  </movable-view>
+</movable-area>

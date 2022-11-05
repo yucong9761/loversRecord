@@ -1,0 +1,25 @@
+<wxs module="util" src="../util.wxs" />
+<view class="container white" style="animation-name: animation-blur; animation-duration: 0.5s;">
+  <image src="../../images/Mission.gif" mode='widthFix' />
+  <view class="form-group" style="z-index: 0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05); ">
+    <view class="form-cell">
+      <view class="form-cell_title">📌记录名称</view>
+      <input class="form-cell_input" placeholder="记录名是什么?" placeholder-class="form-cell_placeholder" bindinput="onTitleInput" value="{{title}}" />
+    </view>
+    <view class="form-cell">
+      <view class="form-cell_title">🕰️事务时间</view>
+      <DatetimePicker mode="dateminute" value="{{date}}" bindchange="selectDateMinuteChange">
+        <view class="show-date-time-box">请选择时间: {{date}}</view>
+      </DatetimePicker>
+    </view>
+    <view class="form-cell">
+      <view class="form-cell_title">📝记录详情</view>
+      <textarea class="form-cell_input" placeholder="记录内容是要做什么呢?" placeholder-class="form-cell_placeholder" bindinput="onDescInput" value="{{desc}}" />
+    </view>
+  </view>
+
+  <view class="footer">
+    <view class="reset" bindtap="resetRemark">重置</view>
+    <view class="save" bindtap="saveRemark">保存</view>
+  </view>
+</view>
