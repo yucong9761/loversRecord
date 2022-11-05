@@ -1,0 +1,66 @@
+{
+  "subpackages": [
+    {
+      "root": "packageA",
+      "name": "pack1",
+      "pages": [
+      ],
+      "Images": [
+        "Images/HomeCover01"
+      ]
+    },
+    {
+      "root": "packageB",
+      "name": "pack2",
+      "pages": [
+        "pages/Mission/index",
+        "pages/MissionAdd/index",
+        "pages/MissionDetail/index",
+        "pages/Memorandum/index",
+        "pages/MemorandumAdd/index",
+        "pages/MemorandumDetail/index",
+        "pages/Remark/index",
+        "pages/RemarkAdd/index",
+        "pages/RemarkDetail/index"
+      ]
+    }
+  ],
+  "pages":[
+    "pages/MainPage/index",
+    "pages/Remark/index",
+    "pages/Memorandum/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff99aa",
+    "navigationBarTitleText": "蝶蝶童童的树洞",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#1a1a1a",
+    "selectedColor": "#ff99aa",
+    "list": [{
+      "pagePath": "pages/MainPage/index",
+      "selectedIconPath": "images/TabBar/HomeIconColor.jpg",
+      "iconPath": "images/TabBar/HomeIconGrey.jpg",
+      "text": "首页"
+    }, 
+    {
+      "pagePath": "pages/Remark/index",
+      "selectedIconPath": "images/TabBar/MissionIconColor.jpg",
+      "iconPath": "images/TabBar/MissionIconGrey.jpg",
+      "text": "小本本"
+    }, 
+    {
+      "pagePath": "pages/Memorandum/index",
+      "selectedIconPath": "images/TabBar/MemorandumIconColor.jpg",
+      "iconPath": "images/TabBar/MemorandumIconGrey.jpg",
+      "text": "代办"
+    }]
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "cloud": true,
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

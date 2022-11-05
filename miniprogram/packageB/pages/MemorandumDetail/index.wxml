@@ -1,0 +1,33 @@
+<wxs module="util" src="../util.wxs" />
+
+<view class="container white" style="animation-name: animation-blur; animation-duration: 0.8s;">
+  <image src="../../images/Mission.gif" mode='widthFix' />
+  <view class="form-group" 
+  style="z-index: 0; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05); ">
+    <view class="form-cell">
+      <view class="mission-info_title">📌 事务名称</view>
+      <view class="mission-info_desc">{{remark.title}}</view>
+    </view>
+    <view class="form-cell">
+      <view class="form-cell_title">🕰️事务时间</view>
+      <DatetimePicker mode="dateminute" value="{{date}}" bindchange="selectDateMinuteChange">
+        <view class="show-date-time-box">请选择时间: {{remark.date}}</view>
+      </DatetimePicker>
+    </view>
+    <view class="form-cell">
+      <view class="mission-info_title">💡 执行人</view>
+      <view class="mission-info_desc">此任务由{{from}}执行</view>
+    </view>    
+    <view class="form-cell">
+      <view class="form-cell_title">⛱️事务地点</view>
+      <input class="form-cell_input" placeholder="事务地点" placeholder-class="form-cell_placeholder" bindinput="onLocationInput" value="{{remark.location}}" />
+    </view>
+    <view class="form-cell">
+      <view class="mission-info_title">📝 任务详情</view>
+      <view class="mission-info_desc">{{remark.desc}}</view>
+    </view>
+    <button size="mini" bindtap="commitRemark">确认</button>
+    <button size="mini" bindtap="deleteRemark">删除</button>
+    <button size="mini" bindtap="finishRemark">完成</button>
+  </view>
+</view>

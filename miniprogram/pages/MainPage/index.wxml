@@ -1,0 +1,47 @@
+<view style="width:100%; background: none;">
+
+  <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500" style="background: white; height: 180px; width: 100%;">
+      <swiper-item><image src="Images/HomeCover01.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
+      <swiper-item><image src="Images/HomeCover02.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
+      <swiper-item><image src="Images/HomeCover03.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
+      <swiper-item><image src="Images/HomeCover04.jpg" mode='widthFix' class="swiper-image" /></swiper-item>
+      <!-- <swiper-item><image src="Images/HomeCover05.jpg" mode='widthFix' class="swiper-image" /></swiper-item> -->
+  </swiper>
+  <view class="form-group_label">🕰️ 在一起</view>
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+    <view class="form-cell">
+        <view class="slide">
+        <view class="title">我们已经在一起了：{{resultTime.dd}}天{{resultTime.hh}}小时{{resultTime.mm}}分{{resultTime.ss}}秒</view>
+        </view>
+    </view>
+</view>
+<view class="form-group_label">🐻 欢迎回来</view>
+  <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+    <view class="form-cell">
+      <view class="slide">
+        <view class="title">欢迎！蝶蝶和童童！</view>
+      </view>
+    </view>
+    <view class="form-cell">
+      <view class="slide">
+        <view class="title">今天想做什么呢？</view>
+      </view>
+    </view>
+  </view>
+<!-- <view class="form-group_label">💰 积分榜</view>
+    <view class="form-group" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);">
+    <view class="form-cell">
+        <view class="slide">
+        <view class="title">{{userA}}的积分：{{creditA}}</view>
+        </view>
+    </view>
+    <view class="form-cell">
+        <view class="slide">
+        <view class="title">{{userB}}的积分：{{creditB}}</view>
+        </view>
+    </view>
+</view> -->
+
+
+
+</view>
