@@ -1,7 +1,7 @@
 # loversbookkeeping-
 微信小程序情侣备忘录，提供在一起时间记录、备忘录和消息提醒功能。
 
-在https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram基础上魔改了
+在https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram 基础上进行魔改
 
 保留：最基础的用户展示功能和框架格式
 
